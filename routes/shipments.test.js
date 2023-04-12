@@ -44,7 +44,7 @@ describe("POST /", function () {
       .send({
         productId: 1000,
         name: "Test Tester",
-        addr: "100 Test St",
+        addr: "100 Test St",  //test multiple invalid inputs at once
         zip: 12345-6789,
       });
 
@@ -52,4 +52,6 @@ describe("POST /", function () {
       toEqual("instance.zip is not of a type(s) string");
     expect(resp.statusCode).toEqual(400);
   });
+
+  // test not providing required inputs
 });
